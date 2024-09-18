@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThunderType</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style/main.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgColor: '#323437', 
+                        textPrimary: '#fff', 
+                        textSecondary: '#666', 
+                        primaryColor: '#fd4', 
+                        correct:'#fff',
+                        incorrect:'#ca4754',
+                        extra: '#7e2a33',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="w-screen roboto bg-bgColor text-textPrimary">
+
+    <main class="mx-10 my-14">
+
+        <h1 class="flex items-center text-2xl text-primaryColor">
+            <img id="logo" class="w-6" src="../img/thunder-svgrepo-com.svg" alt="logo">
+            ThunderType
+        </h1>
+
+        <div id="header" class="mt-5 mx-4 mb-10 flex items-center justify-between">
+            <div class="flex items-center gap-5">
+                <div id="info" class="text-xl text-primaryColor"></div>
+                <div id="accuracy" class="text-xl text-primaryColor"></div>
+            </div>
+            <div id="buttons">
+                <button id="newgame" type="button" class="button focus-none outline-0">
+                    <div class="button-top">New Game</div>
+                    <div class="button-bottom"></div>
+                    <div class="button-base"></div>
+                </button>
+            </div>
+        </div>
+
+        <div id="game" tabindex="0" class="mx-4 leading-8 h-[128px] text-2xl text-textSecondary overflow-hidden relative  outline-0 border-0 group">
+            <div id="words" class="roboto-mono blur-sm group-focus:blur-none"></div>
+            <div id="cursor" class="w-[2px] h-7 bg-primaryColor fixed top-[185px] left-[60px] hidden group-focus:block"></div>
+            <div id="focus-error" class="absolute inset-0 text-lg text-textPrimary text-center pt-9 group-focus:hidden">Click here to start <span class="italic">(or press 'Shift' key)</span></div>
+        </div>
+
+    </main>
+
+    <script src="../js/keyboard.js"></script>
+</body>
+</html>
